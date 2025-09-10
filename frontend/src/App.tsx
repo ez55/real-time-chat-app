@@ -2,17 +2,19 @@
 import Navbar from "./components/Navbar.tsx"
 
 // @ts-ignore
-import HomePage from "./pages/HomePage.tsx"
+import HomePage from "./pages/HomePage.jsx"
 // @ts-ignore
 import LoginPage from "./pages/LoginPage.jsx"
 // @ts-ignore
 import ProfilePage from "./pages/ProfilePage.jsx"
 // @ts-ignore
-import SettingsPage from "./pages/SettingsPage.tsx"
+import SettingsPage from "./pages/SettingsPage.jsx"
 // @ts-ignore
 import SignupPage from "./pages/SignupPage.jsx"
 // @ts-ignore
 import {useAuthStore} from "./store/useAuthStore.js"
+// @ts-ignore
+import {useThemeStore} from "./store/useThemeStore.js"
 
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from "react"
@@ -23,6 +25,7 @@ const App = () => {
 
   const {authUser, checkAuth, isCheckingAuth} = useAuthStore()
 
+  const {theme} = useThemeStore()
   useEffect(() => {
     checkAuth()
   }, [checkAuth]);
@@ -36,7 +39,7 @@ const App = () => {
   )
 
   return (
-    <div>
+    <div data-theme={theme}>
       <Navbar/>
 
       <Routes>
