@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+// @ts-ignore
 import { useAuthStore } from "../store/useAuthStore";
 import { LogOut, MessageSquare, Settings, User } from "lucide-react";
 
