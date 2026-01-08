@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { useChatStore } from "../store/useChatStore";
+import { useAuthStore } from "../store/useAuthStore";
 
 import {useEffect} from "react";
 import MessageInput from './MessageInput';
@@ -56,8 +57,9 @@ const ChatContainer = () => {
                             alt='Attachment'
                             className="sm:max-w-[200px] rounded-md mb-2"
                         />
-
+                        
                     )}
+                    {message.text && <p>{message.text}</p>}
                 </div>
 
 
