@@ -10,7 +10,7 @@
   "main": "index.js",
   "scripts": {
     "build":"",
-    "start":"",
+    "start":""
   },
   "keywords": [],
   "author": "",
