@@ -71,7 +71,7 @@ const SignupPage = () => {
                             </div>
                             <input
                             type="text"
-                            className={`input input-bordered w-full pl-10`}
+                            className={`input input-bordered w-full pl-10 border`}
                             placeholder="John Doe"
                             value={formData.fullName}
                             onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -89,7 +89,7 @@ const SignupPage = () => {
                             </div>
                             <input
                             type="email"
-                            className={`input input-bordered w-full pl-10`}
+                            className={`input input-bordered w-full pl-10 border`}
                             placeholder="john@mail.com"
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -107,7 +107,7 @@ const SignupPage = () => {
                             </div>
                             <input
                             type={showPassword ? "text" : "password"}
-                            className={`input input-bordered w-full pl-10`}
+                            className={`input input-bordered w-full pl-10 border`}
                             placeholder="••••••••"
                             value={formData.password}
                             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -149,11 +149,11 @@ const SignupPage = () => {
                  <div className="text-center">
                     <p className="text-base-content/60">
                         Already have an account?{" "}
-                        <Link data-theme="light" to="/login" className="link link-primary">
+                        <Link data-theme="light" to="/login" className="link link-primary text-blue-700 underline">
                             Sign in
                         </Link>
                     </p>
-                </div>
+                </div> 
             </div>
         </div>
         {/* right side */}

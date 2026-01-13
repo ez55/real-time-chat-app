@@ -57,9 +57,9 @@ const LoginPage = () => {
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" style={{zIndex:2}}>
                   <Mail className="h-5 w-5" />
                 </div>
-                <input
-                  type="email"
-                  className={`input input-bordered w-full pl-10`}
+                  <input
+                    type="email"
+                    className={`input input-bordered w-full pl-10 border border-gray-300`}
                   placeholder="you@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -75,9 +75,9 @@ const LoginPage = () => {
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" style={{zIndex:2}}>
                   <Lock className="h-5 w-5 text-base-content/40" />
                 </div>
-                <input
-                  type={showPassword ? "text" : "password"}
-                  className={`input input-bordered w-full pl-10`}
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    className={`input input-bordered w-full pl-10 border border-gray-300`}
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
