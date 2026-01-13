@@ -3,6 +3,8 @@ import {useState, useEffect} from "react"
 import { useAuthStore } from "../store/useAuthStore";
 import { Link, useNavigate } from "react-router-dom";
 
+import { useThemeStore } from "../store/useThemeStore";
+console.log("Current theme:", useThemeStore.getState().theme);
 import AuthImagePattern from "../components/AuthImagePattern";
 import toast from "react-hot-toast";
 
@@ -64,7 +66,7 @@ const SignupPage = () => {
                             <span className="label-text font-medium">Full Name</span>
                         </label>
                         <div className="relative">
-                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" style={{zIndex:2}}>
                             <User className="size-5 text-base-content/40" />
                             </div>
                             <input
@@ -82,7 +84,7 @@ const SignupPage = () => {
                             <span className="label-text font-medium">Email</span>
                         </label>
                         <div className="relative">
-                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" style={{zIndex:2}}>
                                 <Mail className="size-5 text-base-content/40" />
                             </div>
                             <input
@@ -100,7 +102,7 @@ const SignupPage = () => {
                             <span className="label-text font-medium">Password</span>
                         </label>
                         <div className="relative">
-                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" style={{zIndex:2}}>
                                 <Lock className="size-5 text-base-content/40" />
                             </div>
                             <input
@@ -124,23 +126,30 @@ const SignupPage = () => {
                         </div>
                         </div>
 
-                        <button type="submit" className="btn btn-primary w-full" disabled={isSigningUp}>
-                        {isSigningUp ? (
-                            <>
-                            <Loader2 className="size-5 animate-spin" />
-                            Loading...
-                            </>
-                        ) : (
-                            "Create Account"
-                        )}
-                    </button>
+                        <button
+                            type="submit"
+                            className="btn w-full shadow-sm"
+                            style={{ backgroundColor: '#4C7F99', color: '#fff', transition: 'background 0.2s' }}
+                            onMouseOver={e => (e.currentTarget.style.backgroundColor = '#395e73')}
+                            onMouseOut={e => (e.currentTarget.style.backgroundColor = '#4C7F99')}
+                            disabled={isSigningUp}
+                        >
+                            {isSigningUp ? (
+                                <>
+                                    <Loader2 className="size-5 animate-spin" />
+                                    Loading...
+                                </>
+                            ) : (
+                                "Create Account"
+                            )}
+                        </button>
 
                 </form>
 
                  <div className="text-center">
                     <p className="text-base-content/60">
                         Already have an account?{" "}
-                        <Link to="/login" className="link link-primary">
+                        <Link data-theme="light" to="/login" className="link link-primary">
                             Sign in
                         </Link>
                     </p>
