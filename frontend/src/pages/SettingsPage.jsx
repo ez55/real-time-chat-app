@@ -9,6 +9,7 @@ const PREVIEW_MESSAGES = [
 
 const SettingsPage = () => {
   const { theme, setTheme } = useThemeStore();
+  console.log(theme)
 
   return (
     <div className="h-screen container mx-auto px-4 pt-20 max-w-5xl">

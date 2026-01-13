@@ -1,6 +1,5 @@
 
 import Navbar from "./components/Navbar.tsx"
-
 // @ts-ignore
 import HomePage from "./pages/HomePage.jsx"
 // @ts-ignore
@@ -30,8 +29,6 @@ const App = () => {
   useEffect(() => {
     checkAuth()
   }, [checkAuth]);
-  
-  console.log({authUser})
 
   if (isCheckingAuth && !authUser) return (
     <div className="flex items-center justify-center h-screen">
