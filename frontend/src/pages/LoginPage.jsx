@@ -38,7 +38,7 @@ const LoginPage = () => {
                 className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20
               transition-colors"
               >
-                <MessageSquare className="w-6 h-6 text-primary" />
+                <MessageSquare className="w-6 h-6 text-primary" style={{ color: "#4C7F99" }} />
               </div>
               <h1 className="text-2xl font-bold mt-2">Welcome Back</h1>
               <p className="text-base-content/60">Sign in to your account</p>
@@ -53,7 +53,7 @@ const LoginPage = () => {
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail className="h-5 w-5 text-base-content/40" />
+                  <Mail className="h-5 w-5 text-blue-500" />
                 </div>
                 <input
                   type="email"
@@ -94,7 +94,13 @@ const LoginPage = () => {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-primary w-full" disabled={isLoggingIn}>
+            
+              <button
+                type="submit" className="btn w-full shadow-md" style={{ backgroundColor: '#4C7F99', color: '#fff', transition: 'background 0.2s' }}
+                onMouseOver={e => (e.currentTarget.style.backgroundColor = '#395e73')}
+                onMouseOut={e => (e.currentTarget.style.backgroundColor = '#4C7F99')}
+                disabled={isLoggingIn}
+              >
               {isLoggingIn ? (
                 <>
                   <Loader2 className="h-5 w-5 animate-spin" />
