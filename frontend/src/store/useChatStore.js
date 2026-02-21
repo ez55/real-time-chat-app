@@ -56,8 +56,9 @@ export const useChatStore = create((set, get) => ({
         socket.on("newMessage", (newMsg) => {
             if (newMsg.senderId !== selectedUser._id) return; // If message sender is not equal to seelcted user, do not update
             set({
+                // Add new message to messages
                  messages: [...get().messages, newMsg],
-            }); // add newMessage to mesages
+            }); 
         });
     },
 
